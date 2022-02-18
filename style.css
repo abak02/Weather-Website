@@ -24,3 +24,12 @@ body{
 .orange-color{
     color: tomato;
 }
+.shadow{
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    border-radius: 0 20px;
+    margin-top: 10px;
+}
+.width-form{
+    width: 50%;
+    display: inline;
+}
