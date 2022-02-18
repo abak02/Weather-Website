@@ -84,7 +84,7 @@
 
     <script>
         let lat,lon;
-        fetch("http://api.openweathermap.org/geo/1.0/direct?q=dhaka&limit=5&appid=5ab045bbcf781f7a13344f5061a86f81")
+        fetch("http://api.openweathermap.org/geo/1.0/direct?q=kushtia&limit=5&appid=5ab045bbcf781f7a13344f5061a86f81")
         .then(res=>res.json())
         .then(data=>{
             let allData = data[0];
@@ -92,7 +92,7 @@
             lon= allData.lon;
             console.log(lat, lon);
             console.log(data[0]);
-            fetch("http://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=5ab045bbcf781f7a13344f5061a86f81")
+            fetch("https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=5ab045bbcf781f7a13344f5061a86f81")
             .then(res=>res.json())
             .then(data=>{
             const temp=data.main.temp;
