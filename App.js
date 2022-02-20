@@ -21,7 +21,7 @@ showWeatherInfo("dhaka");
             .then(data=>{
             const temp=data.main.temp;
             const temperature= document.getElementById("temparature");
-            temperature.innerText=parseInt(temp-273.16);
+            temperature.innerText=parseInt(temp-273.16)+"°";
             const cityName=document.getElementById("city-name");
             
             cityName.innerText=allData.name+","+allData.state;
@@ -46,7 +46,7 @@ showWeatherInfo("dhaka");
             weather.innerText=data.weather[0].main;
             const url = "http://openweathermap.org/img/w/"+data.weather[0].icon+".png";
             icon.src = url;
-            document.getElementById("feel").innerText=parseInt(data.main.feels_like-273.16);
+            document.getElementById("feel").innerText="Feels Like : "+parseInt(data.main.feels_like-273.16);
             //rain.innerText=data.rain.1h;
 
 
@@ -68,7 +68,7 @@ showWeatherInfo("dhaka");
                     weatherHTML=weatherHTML+`
                    
                         <div class="col-md-3 mt-4">
-                            <div class="box">
+                            <div class="box .slide-right">
                                 <div class="d-flex justify-content-between>
                                 <p class="text-muted fw-bold text-size-2">Date : ${element.dt_txt.slice(0,10)} Time : ${element.dt_txt.slice(11,19)}</p>
                                 </div>
