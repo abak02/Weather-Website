@@ -33,3 +33,22 @@ body{
     width: 50%;
     display: inline;
 }
+.box{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.text-size{
+    font-size: 12px;
+}
+
+.box:hover{
+    background-color: #f2ffff;
+}
+.color{
+    background-color: #90dad8;
+}
+.text-size-2{
+    font-size: 8px;
+}
