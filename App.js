@@ -8,10 +8,11 @@ showWeatherInfo("dhaka");
              input.value="";
         })
         function showWeatherInfo(cityInput){
-            let lat,lon;
+            let lat,lon,element;
         fetch("https://api.openweathermap.org/geo/1.0/direct?q="+cityInput+"&limit=5&appid=5ab045bbcf781f7a13344f5061a86f81")
         .then(res=>res.json())
         .then(data=>{
+            
             let allData = data[0];
             lat=allData.lat;
             lon= allData.lon;
@@ -24,10 +25,11 @@ showWeatherInfo("dhaka");
             temperature.innerText=parseInt(temp-273.16);
             const cityName=document.getElementById("city-name");
             
-            cityName.innerText=allData.name;
+            cityName.innerText=allData.name+","+allData.state;
             const wind=document.getElementById("wind");
             const snow = document.getElementById("snow");
             const bright = document.getElementById("bright");
+            const cloud = document.getElementById("cloud");
             const windData=data.wind.speed;
             wind.innerText=windData+" m/s";
             const humidity=data.main.humidity;
@@ -38,6 +40,7 @@ showWeatherInfo("dhaka");
             var minutes = date.getMinutes();
             var seconds = date.getSeconds();
             bright.innerText= hours+' : '+minutes+' : '+seconds;
+            cloud.innerText=data.clouds.all+" %";
         })
         })
         }
